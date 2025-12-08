@@ -227,6 +227,7 @@ export default {
 </script>
 
 <style scoped>
+/* MAIN CONTAINER */
 .cart-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -236,23 +237,17 @@ export default {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  /* Set a max height for the whole container relative to viewport */
-  max-height: 80vh; 
-  overflow: hidden; /* Hide overflow on the main container */
 }
 
+/* WRAPPERS - Let them flow naturally */
 .cart-content-wrapper {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    overflow: hidden;
 }
 
 .cart-view, .checkout-form {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    overflow: hidden;
 }
 
 .cart-title {
@@ -261,20 +256,12 @@ export default {
   border-bottom: 1px solid #eee;
   padding-bottom: 15px;
   color: #111;
-  flex-shrink: 0; /* Prevent header from shrinking */
+  text-align: left; /* Ensure title is left aligned too */
 }
 
-/* SCROLLABLE AREAS */
+/* SCROLLABLE AREAS - Removed scroll logic so they expand */
 .cart-items-scroll {
-    overflow-y: auto;
-    flex-grow: 1; /* Take up available space */
     border-bottom: 1px solid #eee;
-}
-
-.scroll-form {
-    overflow-y: auto;
-    flex-grow: 1;
-    padding-right: 10px; /* Space for scrollbar */
 }
 
 /* STICKY HEADER FOR TABLE */
@@ -283,11 +270,12 @@ export default {
     top: 0;
     background-color: white;
     z-index: 10;
-    box-shadow: 0 1px 0 #eee; /* subtle border line */
+    box-shadow: 0 1px 0 #eee;
 }
 
 .form-section {
   margin-bottom: 30px;
+  text-align: left; /* Ensure section headers align left */
 }
 
 .form-section h3 {
@@ -305,6 +293,7 @@ export default {
   margin-bottom: 5px;
   font-weight: 500;
   color: #444;
+  text-align: left; /* Force left alignment */
 }
 
 .form-group input, .form-group select {
@@ -345,6 +334,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
+  text-align: left;
 }
 
 .payment-options label.active {
@@ -391,9 +381,8 @@ td { padding: 20px 10px; border-bottom: 1px solid #f4f4f4; vertical-align: middl
     align-items: flex-end; 
     border-top: 2px solid #eee; 
     padding-top: 20px; 
-    margin-top: auto; /* Push to bottom */
-    flex-shrink: 0;
-    background: white; /* Ensure opaque background if content scrolls under */
+    margin-top: 20px;
+    background: white; 
 }
 
 .summary-row { display: flex; gap: 40px; margin-bottom: 20px; font-size: 1.2rem; }
