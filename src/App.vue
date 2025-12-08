@@ -276,6 +276,11 @@ button:hover {
  color: #ffe007;
 }
 
+button:active {
+  background-color: #003691; 
+  transform: translateY(1px);
+}
+
 .quantity-input {
   width: 50px;
   height: 30px;
